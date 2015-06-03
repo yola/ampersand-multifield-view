@@ -1,0 +1,38 @@
+{
+  "name": "y",
+  "version": "0.1.0",
+  "description": "A view module for intelligently grouping multiple field views. Works well with ampersand-form-view",
+  "main": "ampersand-multifield-view.js",
+  "scripts": {
+    "test": "browserify test/index.js | tape-run | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yola/ampersand-multifield-view.git"
+  },
+  "keywords": [
+    "forms",
+    "ampersand",
+    "browser"
+  ],
+  "author": "Yola Engineering <engineers@yola.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yola/ampersand-multifield-view/issues"
+  },
+  "homepage": "https://github.com/yola/ampersand-multifield-view",
+  "devDependencies": {
+    "ampersand-view-conventions": "^1.1.8",
+    "browserify": "^10.2.3",
+    "jsgreat": "^0.1.6",
+    "phantomjs": "^1.9.17",
+    "tap-spec": "^4.0.0",
+    "tape": "^4.0.0",
+    "tape-run": "^1.0.0",
+    "tape-suite": "^0.2.1"
+  },
+  "dependencies": {
+    "ampersand-view": "^7.4.2",
+    "lodash.find": "^3.2.1"
+  }
+}
