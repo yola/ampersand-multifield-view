@@ -39,15 +39,15 @@ var MultiFieldView = View.extend({
       throw new Error('must pass in a name');
     }
 
+    if (!this.fields) {
+      throw new Error('must have an array of fields');
+    }
+
     this.value = spec.value || {};
     this.name = spec.name;
     this.validCallback = spec.validCallback || function() {};
     this.beforeSubmit = spec.beforeSubmit || this.beforeSubmit;
     this.updateValid();
-
-    if (!this.fields) {
-      throw new Error('must have an array of fields');
-    }
 
     this.fields.forEach(function(field) {
       field.parent = this;
@@ -64,6 +64,7 @@ var MultiFieldView = View.extend({
 
     this.setValue(this.value);
     this.updateValid(true);
+    this.rendered = true;
 
     return this;
   },
