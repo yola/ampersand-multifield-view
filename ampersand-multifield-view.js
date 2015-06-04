@@ -42,6 +42,7 @@ var MultiFieldView = View.extend({
     this.value = spec.value || {};
     this.name = spec.name;
     this.validCallback = spec.validCallback || function() {};
+    this.beforeSubmit = spec.beforeSubmit || this.beforeSubmit;
     this.updateValid();
 
     if (!this.fields) {

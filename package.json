@@ -25,6 +25,7 @@
     "ampersand-view-conventions": "^1.1.8",
     "browserify": "^10.2.3",
     "jsgreat": "^0.1.6",
+    "lodash.assign": "^3.2.0",
     "phantomjs": "^1.9.17",
     "tap-spec": "^4.0.0",
     "tape": "^4.0.0",
