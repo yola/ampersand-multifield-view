@@ -1,7 +1,7 @@
 # ampersand-multifield-view
 
 ## purpose
-A view module for intelligently grouping multiple field views. Works well with [ampersand-form-view][ampersand-form-view].
+A view module for intelligently applying an hierarchy to form data. `MultifieldView` gathers field views into a collection that can be treated as a single field view whose value is an object with keys and values corresponding to its sub-views' names and values. Works well with [ampersand-form-view][ampersand-form-view].
 
 It does the following:
 
