@@ -42,7 +42,7 @@ var MultiFieldView = View.extend({
     this.value = spec.value || {};
     this.name = spec.name;
     this.validCallback = spec.validCallback || function() {};
-    this.checkValid();
+    this.updateValid();
 
     if (!this.fields) {
       throw new Error('must have an array of fields');
@@ -62,7 +62,7 @@ var MultiFieldView = View.extend({
     }, this);
 
     this.setValue(this.value);
-    this.checkValid(true);
+    this.updateValid(true);
 
     return this;
   },
@@ -80,6 +80,12 @@ var MultiFieldView = View.extend({
     this.fieldContainerEl.appendChild(fieldView.el);
   },
 
+  isValid: function() {
+    return this.fields.every(function(field) {
+      return field.valid;
+    });
+  },
+
   setValid: function(now, forceFire) {
     var prev = this.valid;
 
@@ -90,11 +96,8 @@ var MultiFieldView = View.extend({
     }
   },
 
-  checkValid: function(forceFire) {
-    var valid = this.fields.every(function(field) {
-      return field.valid;
-    });
-
+  updateValid: function(forceFire) {
+    var valid = this.isValid();
     this.setValid(valid, forceFire);
     return valid;
   },
@@ -123,7 +126,7 @@ var MultiFieldView = View.extend({
     this.trigger('change:' + field.name, field);
 
     if (field.valid) {
-      this.checkValid();
+      this.updateValid();
     } else {
       this.setValid(false);
     }
