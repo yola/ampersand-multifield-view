@@ -110,6 +110,7 @@ When creating an instance of `MultiFieldView`, you can pass initial values to be
 - `label`: the label for the views.
 - `value`: initial value to pass on to the MultiFieldView's forms. An object where the keys match the fields' `name` attributes.
 - `template`: a custom template to use.
+- `validCallback`: function called whenever the `valid` property's value changes.
 - `beforeSubmit`: function called by [ampersand-form-view][ampersand-form-view] during submit.
 
 ### render `AmpersandMultiFieldView.render()`
@@ -123,6 +124,9 @@ It can be a function that returns a string of HTML or DOM element -- or just an 
 The resulting HTML should contain the following hooks:
 - an element with a `data-hook="label"` attribute.
 - an element with a `data-hook="multifields"` attribute where the fields are inserted.
+
+## validCallback `AmpersandMultiFieldView.validCallback()`
+A function that gets called, if it exists, when the field first loads and anytime the form changes from valid to invalid or vice versa.
 
 ### beforeSubmit `AmpersandMultiFieldView.beforeSubmit()`
 This function is called by [ampersand-form-view][ampersand-form-view] during submit and calls its fields' `beforeSubmit` functions.

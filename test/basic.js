@@ -29,9 +29,10 @@ viewConventions.formField(
   {field1: 'Hi', field2: 'Bye'}
 );
 
-var makeMultifield = function(value) {
+var makeMultifield = function(value, validCB) {
   var spec = testSpecs();
   spec.value = value;
+  spec.validCallback = validCB;
   return new MultifieldView(spec);
 };
 
@@ -58,15 +59,26 @@ test('it updates its value when a field is set', function(t) {
   t.end();
 });
 
-test('it is invalid when one of its fields is invalid', function(t){
+test('it updates its validity based on its fields', function(t) {
   var value = {field1: 'test'};
   var multifield = makeMultifield(value);
   multifield.render();
 
-  t.equal(multifield.valid, false, 'when invalid');
+  t.equal(multifield.valid, false, 'with an invalid field');
 
   multifield.fields[1].setValue('anotherTest');
 
-  t.equal(multifield.valid, true, 'when valid');
+  t.equal(multifield.valid, true, 'when all fields are valid');
+  t.end();
+});
+
+test('it handles its validCallback function', function(t) {
+  var cb = function() {
+    this.cbTest = true;
+  };
+
+  var multifield = makeMultifield({}, cb);
+
+  t.equal(multifield.cbTest, true, 'sets and calls the validCallback');
   t.end();
 });

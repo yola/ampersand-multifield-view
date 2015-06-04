@@ -41,8 +41,8 @@ var MultiFieldView = View.extend({
 
     this.value = spec.value || {};
     this.name = spec.name;
-    this.valid = true;
     this.validCallback = spec.validCallback || function() {};
+    this.checkValid();
 
     if (!this.fields) {
       throw new Error('must have an array of fields');
