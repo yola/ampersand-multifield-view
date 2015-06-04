@@ -12,7 +12,7 @@ var MultiFieldView = View.extend({
   ].join(''),
 
   bindings: {
-    'label' : [
+    'label': [
       {
         hook: 'label'
       },
@@ -85,7 +85,7 @@ var MultiFieldView = View.extend({
 
     this.valid = now;
 
-    if(prev !== now || forceFire) {
+    if (prev !== now || forceFire) {
       this.validCallback(now);
     }
   },
@@ -102,7 +102,9 @@ var MultiFieldView = View.extend({
   setValue: function(value) {
     var fields = this.fields;
     var findField = function(name) {
-      var field = find(fields, {name: name});
+      var field = find(fields, {
+        name: name
+      });
 
       if (!field) {
         throw new Error('Field ' + name + ' not found');
@@ -128,7 +130,7 @@ var MultiFieldView = View.extend({
 
     this.value[field.name] = field.value;
 
-    if(this.parent) {
+    if (this.parent) {
       this.parent.update(this);
     }
   },
