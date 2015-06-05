@@ -64,8 +64,6 @@ var MultiFieldView = View.extend({
 
     this.setValue(this.value);
     this.updateValid(true);
-    this.rendered = true;
-
     return this;
   },
 
