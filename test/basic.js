@@ -1,12 +1,12 @@
 'use strict';
 
-var test = require('tape');
-var suite = require('tape-suite');
-
 var assign = require('lodash.assign');
-var viewConventions = require('ampersand-view-conventions');
 var FieldView = require('./minimal-field-view');
 var MultifieldView = require('../ampersand-multifield-view');
+var sinon = require('sinon');
+var suite = require('tape-suite');
+var test = require('tape');
+var viewConventions = require('ampersand-view-conventions');
 
 var testSpecs = function() {
   var fields = [
@@ -72,25 +72,19 @@ test('it updates its validity based on its fields', function(t) {
 });
 
 test('it can be created with a beforeSubmit function', function(t) {
-  var beforeSubmit = function() {
-    MultifieldView.prototype.beforeSubmit.apply(this);
-    this.bsTest = true;
-  };
+  var cb = sinon.spy();
 
-  var multifield = makeMultifield({beforeSubmit: beforeSubmit});
+  var multifield = makeMultifield({beforeSubmit: cb});
   multifield.beforeSubmit();
 
-  t.equal(multifield.bsTest, true, 'called custom beforeSubmit');
+  t.equal(cb.called, true, 'called custom beforeSubmit');
   t.end();
 });
 
 test('it handles its validCallback function', function(t) {
-  var cb = function() {
-    this.cbTest = true;
-  };
+  var cb = sinon.spy();
+  makeMultifield({validCallback: cb});
 
-  var multifield = makeMultifield({validCallback: cb});
-
-  t.equal(multifield.cbTest, true, 'sets and calls the validCallback');
+  t.equal(cb.called, true, 'sets and calls the validCallback');
   t.end();
 });
