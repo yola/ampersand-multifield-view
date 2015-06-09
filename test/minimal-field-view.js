@@ -1,0 +1,1 @@
+../node_modules/ampersand-view-conventions/minimal-field-view.js
