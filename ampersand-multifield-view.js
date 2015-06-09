@@ -24,12 +24,6 @@ var MultiFieldView = View.extend({
   },
 
   props: {
-    fields: {
-      type: 'array',
-      required: true,
-      allowNull: false,
-    },
-
     label: ['string', true, ''],
     name: 'string'
   },
@@ -39,19 +33,17 @@ var MultiFieldView = View.extend({
       throw new Error('must pass in a name');
     }
 
-    if (!this.fields) {
-      throw new Error('must have an array of fields');
-    }
-
-    this.value = spec.value || {};
+    this.beforeSubmit = spec.beforeSubmit || this.beforeSubmit;
+    this.fields = spec.fields || this.fields || [];
     this.name = spec.name;
     this.validCallback = spec.validCallback || function() {};
-    this.beforeSubmit = spec.beforeSubmit || this.beforeSubmit;
-    this.updateValid();
+    this.value = spec.value || {};
 
     this.fields.forEach(function(field) {
       field.parent = this;
     }, this);
+
+    this.updateValid();
   },
 
   render: function() {
