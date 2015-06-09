@@ -1,5 +1,7 @@
 # ampersand-multifield-view
 
+[![build status][travis-image]][travis-url]
+
 ## purpose
 A view module for intelligently applying an hierarchy to form data. `MultifieldView` gathers field views into a collection that can be treated as a single field view whose value is an object with keys and values corresponding to its sub-views' names and values. Works well with [ampersand-form-view][ampersand-form-view].
 
@@ -153,3 +155,5 @@ MIT
 [ampersand-form-view]: https://github.com/AmpersandJS/ampersand-form-view
 [ampersand-form-conventions]: http://ampersandjs.com/learn/forms
 [ampersand-state]: http://ampersandjs.com/docs#ampersand-state
+[travis-image]: https://travis-ci.org/yola/ampersand-multifield-view.svg?branch=0.1.0
+[travis-url]: https://travis-ci.org/yola/ampersand-multifield-view
