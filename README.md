@@ -108,6 +108,7 @@ When creating an instance of `MultiFieldView`, you can pass initial values to be
 **opts**
 - `name`: the field's `name` attribute's value. Used when reporting to parent form.
 - `label`: the label for the views.
+- `fields`: an array of form-vield views
 - `value`: initial value to pass on to the MultiFieldView's forms. An object where the keys match the fields' `name` attributes.
 - `template`: a custom template to use.
 - `validCallback`: function called whenever the `valid` property's value changes.
