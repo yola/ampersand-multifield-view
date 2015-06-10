@@ -97,7 +97,7 @@ var AmpersandMultiFieldView = require('ampersand-multifield-view');
 var MyCustomMultiField = AmpersandMultiFieldView.extend({
   initialize: function(spec) {
     // call its parent's initialize manually
-    AmpersandMultiFieldView.prototype.initialize.apply(this, spec);
+    AmpersandMultiFieldView.prototype.initialize.call(this, spec);
 
     // do whatever else
   }
@@ -142,7 +142,7 @@ var AmpersandMultiFieldView = require('ampersand-multifield-view');
 var MyCustomMultiField = AmpersandMultiFieldView.extend({
   beforeSubmit: function() {
     // call its parent's beforeSubmit manually
-    AmpersandMultiFieldView.prototype.beforeSubmit.apply(this);
+    AmpersandMultiFieldView.prototype.beforeSubmit.call(this);
 
     // do whatever else
   }
