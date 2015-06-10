@@ -156,5 +156,5 @@ MIT
 [ampersand-form-view]: https://github.com/AmpersandJS/ampersand-form-view
 [ampersand-form-conventions]: http://ampersandjs.com/learn/forms
 [ampersand-state]: http://ampersandjs.com/docs#ampersand-state
-[travis-image]: https://travis-ci.org/yola/ampersand-multifield-view.svg?branch=0.1.0
+[travis-image]: https://travis-ci.org/yola/ampersand-multifield-view.svg?branch=master
 [travis-url]: https://travis-ci.org/yola/ampersand-multifield-view
