@@ -195,6 +195,9 @@ var MultiFieldView = View.extend({
   },
 
   clear: function() {
+    // This won't unset field values, but will disable validation
+    this.setValue({}, true);
+
     this.fields.forEach(function(field) {
       if(field.clear) {
         field.clear();
