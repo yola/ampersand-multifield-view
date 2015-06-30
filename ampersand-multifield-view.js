@@ -62,7 +62,7 @@ var MultiFieldView = View.extend({
     this.name = spec.name;
     this.tests = spec.tests || this.tests || [];
     this.validCallback = spec.validCallback || function() {};
-    this.value = spec.value || {};
+    this.value = this.startingValue = spec.value || {};
 
     this.fields.forEach(function(field) {
       field.parent = this;
@@ -183,6 +183,25 @@ var MultiFieldView = View.extend({
     });
 
     View.prototype.remove.apply(this, arguments);
+  },
+
+  reset: function() {
+    this.setValue(this.startingValue, true);
+    this.fields.forEach(function(field) {
+      if(field.reset) {
+        field.reset();
+      }
+    });
+  },
+
+  clear: function() {
+    this.fields.forEach(function(field) {
+      if(field.clear) {
+        field.clear();
+      } else {
+        field.setValue(null);
+      }
+    });
   },
 
   beforeSubmit: function() {

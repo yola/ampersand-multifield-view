@@ -155,3 +155,30 @@ test('it handles its validCallback function', function(t) {
   t.ok(cb.called, 'sets and calls the validCallback');
   t.end();
 });
+
+test('it can reset its value', function(t) {
+   var value = {field1: 'test', field2: 'test2'};
+   var value2 = {field1: 'testReset', field2: 'testReset2'};
+   var multifield = makeMultifield({value: value});
+
+   multifield.render();
+   multifield.setValue(value2);
+   multifield.reset();
+
+   t.deepEqual(multifield.value, value, 'resets to the starting value');
+   t.end();
+});
+
+test('it can clear its value', function(t) {
+  var value = {field1: 'test', field2: 'test2'};
+  var multifield = makeMultifield({value: value});
+
+  multifield.render();
+  multifield.clear();
+
+  value.field1 = null;
+  value.field2 = null;
+
+  t.deepEqual(multifield.value, value, 'nullifies the fields\' values');
+  t.end();
+});
