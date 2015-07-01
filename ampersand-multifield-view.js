@@ -154,11 +154,7 @@ var MultiFieldView = View.extend({
       field.setValue(value[k], !field.required);
     });
 
-    if (!skipValidation) {
-      this.shouldValidate = true;
-    } else if (skipValidation) {
-      this.shouldValidate = false;
-    }
+    this.shouldValidate = !skipValidation;
   },
 
   update: function(field) {
