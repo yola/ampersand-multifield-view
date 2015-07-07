@@ -73,7 +73,9 @@ test('it updates its validity based on its fields', function(t) {
 
 test('it runs given validation tests', function(t) {
   var cb = sinon.spy();
-  makeMultifield({tests: [cb]});
+  var value = {field1: 'test', field2: 'test2'};
+  var multifield = makeMultifield({value: value, tests: [cb]});
+  multifield.render();
 
   t.ok(cb.called, 'tests were called');
   t.end();

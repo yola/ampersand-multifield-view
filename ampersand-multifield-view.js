@@ -102,9 +102,7 @@ var MultiFieldView = View.extend({
       return field.valid;
     });
 
-    var valid = !this.runTests();
-
-    return fieldsValid && valid;
+    return fieldsValid && !this.runTests();
   },
 
   runTests: function() {
@@ -191,8 +189,7 @@ var MultiFieldView = View.extend({
   },
 
   clear: function() {
-    // This won't unset field values, but will disable validation
-    this.setValue({}, true);
+    this.shouldValidate = false;
 
     this.fields.forEach(function(field) {
       if(field.clear) {
