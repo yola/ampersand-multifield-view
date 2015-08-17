@@ -1,6 +1,11 @@
 # Change Log
 
 # 0.1.2
+* Fixed multifield-view's `update` to update its own value before running validation. ([10][10])
+
+[10]: https://github.com/yola/ampersand-multifield-view/pull/8
+
+# 0.1.2
 * Added multifield-level validation. See `AmpersersandMultifieldView.tests`. ([8][8])
 * Added `reset` and `clear` functions
 
