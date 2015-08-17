@@ -157,14 +157,13 @@ var MultiFieldView = View.extend({
 
   update: function(field) {
     this.trigger('change:' + field.name, field);
+    this.value[field.name] = field.value;
 
     if (field.valid) {
       this.updateValid();
     } else {
       this.setValid(false);
     }
-
-    this.value[field.name] = field.value;
 
     if (this.parent) {
       this.parent.update(this);
