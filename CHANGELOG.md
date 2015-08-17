@@ -1,6 +1,6 @@
 # Change Log
 
-# 0.1.2
+# 0.1.3
 * Fixed multifield-view's `update` to update its own value before running validation. ([10][10])
 
 [10]: https://github.com/yola/ampersand-multifield-view/pull/10
