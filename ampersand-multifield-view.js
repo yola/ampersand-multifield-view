@@ -206,7 +206,7 @@ var MultiFieldView = View.extend({
       }
     });
     this.shouldValidate = true;
-    this.runTests();
+    this.isValid();
   }
 });
 
