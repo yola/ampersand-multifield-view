@@ -1,6 +1,6 @@
 {
   "name": "ampersand-multifield-view",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A view module for intelligently grouping multiple field views. Works well with ampersand-form-view",
   "main": "ampersand-multifield-view.js",
   "scripts": {

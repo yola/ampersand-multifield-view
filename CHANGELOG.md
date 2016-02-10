@@ -1,5 +1,11 @@
 # Change Log
 
+# 0.1.6
+* Updated dependencies ([15][15])
+
+[15]: https://github.com/yola/ampersand-multifield-view/pull/15
+
+
 # 0.1.5
 * Fixed multifield-view's `beforeSubmit` to call `isValid` instead of `runTests` to enforce fields' validity before running multifield tests. ([13][13])
 
