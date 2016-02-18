@@ -1,5 +1,8 @@
 # Change Log
 
+# 0.1.7
+* Pin dependencies to minor versions
+
 # 0.1.6
 * Updated dependencies ([15][15])
 
