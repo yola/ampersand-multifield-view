@@ -1,6 +1,6 @@
 {
   "name": "ampersand-multifield-view",
-  "version": "0.1.7",
+  "version": "0.2.0-dev.1",
   "description": "A view module for intelligently grouping multiple field views. Works well with ampersand-form-view",
   "main": "ampersand-multifield-view.js",
   "scripts": {
@@ -34,7 +34,7 @@
     "tape-suite": "0.2.x"
   },
   "dependencies": {
-    "ampersand-view": "9.0.x",
-    "lodash.find": "4.1.x"
+    "ampersand-view": "10.x",
+    "lodash.find": "4.x"
   }
 }
