@@ -34,7 +34,7 @@
     "tape-suite": "0.2.x"
   },
   "dependencies": {
-    "ampersand-view": "9.0.x",
-    "lodash.find": "4.1.x"
+    "ampersand-view": "10.x",
+    "lodash.find": "4.x"
   }
 }
