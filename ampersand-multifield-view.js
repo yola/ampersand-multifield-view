@@ -1,6 +1,6 @@
 'use strict';
 
-var find = require('lodash.find');
+var _ = require('lodash');
 var View = require('ampersand-view');
 
 var MultiFieldView = View.extend({
@@ -136,7 +136,7 @@ var MultiFieldView = View.extend({
   setValue: function(value, skipValidation) {
     var fields = this.fields;
     var findField = function(name) {
-      var field = find(fields, {
+      var field = _.find(fields, {
         name: name
       });
 

@@ -35,6 +35,6 @@
   },
   "dependencies": {
     "ampersand-view": "10.x",
-    "lodash.find": "4.x"
+    "lodash": "4.x"
   }
 }
