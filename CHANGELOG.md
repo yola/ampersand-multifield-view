@@ -2,6 +2,7 @@
 
 ## Dev
 * Upgrade to ampersand-view@10
+* Swap lodash.find for lodash
 
 ## 0.1.7
 * Pin dependencies to minor versions
