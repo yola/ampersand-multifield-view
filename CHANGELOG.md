@@ -1,6 +1,6 @@
 # Change Log
 
-## 0.1.8
+## 0.2.0
 * Upgrade to ampersand-view@10
 * Swap lodash.find for lodash
 
